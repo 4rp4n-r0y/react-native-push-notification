@@ -182,6 +182,16 @@ public class RNPushNotification extends ReactContextBaseJavaModule implements Ac
     }
 
     @ReactMethod
+    /**
+     * Remove all delivered notifications from Notification Center
+     *
+     * @see <a href="https://facebook.github.io/react-native/docs/pushnotificationios.html#removealldeliverednotifications">RN docs</a>
+     */
+    public void removeAllDeliveredNotifications() {
+        mRNPushNotificationHelper.clearNotifications();
+    }
+
+    @ReactMethod
     public void setApplicationIconBadgeNumber(int number) {
         ApplicationBadgeHelper.INSTANCE.setApplicationIconBadgeNumber(getReactApplicationContext(), number);
     }
